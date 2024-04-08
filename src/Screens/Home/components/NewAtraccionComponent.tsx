@@ -35,7 +35,7 @@ export const NewAtraccionComponent = ({ visible, setVisible }: Props) => {
             return
         }
         //console.log(letterForm);
-        const dbRef = ref(dbRealTime, 'Atracciones')
+        const dbRef = ref(dbRealTime, 'atracciones')
         const saveatraccion = push(dbRef) //ubicacion de almacenamiento
         try {
             await set(saveatraccion, atraccionForm)

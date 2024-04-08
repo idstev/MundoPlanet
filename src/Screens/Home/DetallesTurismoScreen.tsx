@@ -31,11 +31,9 @@ export const DetallesTurismoScreen = () => {
   }
 
   const handlerUpdateAtraccion = async () => {
-    //Referencia a la base de datos
     const dbRef = ref(dbRealTime, 'atracciones/' + detallesForm.id)
     await update(dbRef,{Nombre: detallesForm.nombre, Pais: detallesForm.pais, Precio: detallesForm.precio, Estadia: detallesForm.estadia })
     navigation.goBack()
-    //console.log(detailForm);
   }
 
   const handlerDeleteAtraccion= async()=>{
@@ -46,25 +44,33 @@ export const DetallesTurismoScreen = () => {
   return (
     <View style={styles.contentDetail}>
       <View style={styles.nombre}>
-        <Text variant='headlineSmall'>Asunto:</Text>
+        <Text variant='headlineSmall'>Nombre:</Text>
         <TextInput
-          value={detallesForm.subject}
-          onChangeText={(value) => handlerSetDetailForm('subject', value)}
+          value={detallesForm.nombre}
+          onChangeText={(value) => handlerSetDetailForm('nombre', value)}
           style={{ flex: 1 }}
         />
       </View>
       <Divider bold />
       <View>
-        <Text variant='bodyLarge'>Nombre {detallesForm.nombre}</Text>
+        <Text variant='bodyLarge'>Pais: {detallesForm.pais}</Text>
       </View>
       <Divider />
       <View>
-        <Text style={styles.textMessage}>Pais</Text>
+        <Text style={styles.text}>Precio</Text>
         <TextInput
-          value={detallesForm.pais}
+          value={detallesForm.precio}
           multiline={true}
           numberOfLines={7}
-          onChangeText={(value) => handlerSetDetailForm('pais', value)} />
+          onChangeText={(value) => handlerSetDetailForm('precio', value)} />
+      </View>
+      <View>
+        <Text style={styles.text}>Precio</Text>
+        <TextInput
+          value={detallesForm.estadia}
+          multiline={true}
+          numberOfLines={7}
+          onChangeText={(value) => handlerSetDetailForm('estadia', value)} />
       </View>
       <Button mode='contained'  onPress={handlerUpdateAtraccion}>Actualizar</Button>
       <Button mode='contained'  onPress={() => handlerDeleteAtraccion()}>Eliminar</Button>

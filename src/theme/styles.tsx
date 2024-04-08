@@ -44,4 +44,20 @@ export const styles = StyleSheet.create({
         right: 10,
         bottom: 10,
     },
+    contentDetail:{
+        flexDirection:'row',
+        paddingHorizontal:10,
+        paddingVertical:30,
+        alignItems:'center',
+      },
+      nombre:{
+        flexDirection:'row',
+        alignItems:'center',
+        gap:10
+      },
+      text:{
+        marginBottom:10,
+        fontWeight:'bold',
+        fontSize:18
+      }
 })

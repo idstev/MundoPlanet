@@ -14,7 +14,7 @@ export const DetallesTurismoScreen = () => {
   //@ts-ignore
   const { Atraccion } = route.params
 
-  
+
   const [detallesForm, setDetallesForm] = useState<Atraccion>({
     id:'',
     nombre: '',

@@ -1,7 +1,7 @@
 import { onAuthStateChanged } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
 import { auth } from '../configs/fiirebaseConfig'
-import { LoginScreen } from '../Screens/loginScreen'
+import { LoginScreen } from '../Screens/LoginScreen'
 import { RegisterScreen } from '../Screens/RegisterScreen'
 import { HomeScreen } from '../Screens/Home/HomeScreen'
 import { DetallesTurismoScreen } from '../Screens/Home/DetallesTurismoScreen'

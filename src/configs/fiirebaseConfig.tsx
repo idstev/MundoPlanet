@@ -7,14 +7,15 @@ import {getDatabase} from 'firebase/database'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAz156-uU7BjuvJQ27ZC9ShjAYw04A-QfY",
-  authDomain: "mundoplanet-cf78f.firebaseapp.com",
-  projectId: "mundoplanet-cf78f",
-  storageBucket: "mundoplanet-cf78f.appspot.com",
-  messagingSenderId: "534919412821",
-  appId: "1:534919412821:web:a7f6bd6d12105db031e8dc",
-  databaseURL:"https://mundoplanet-cf78f-default-rtdb.firebaseio.com/"
+  apiKey: "AIzaSyDbn1bBYJFev9jihhhjYhtH9XtLlhHe7hs",
+  authDomain: "mundoplanet2.firebaseapp.com",
+  projectId: "mundoplanet2",
+  storageBucket: "mundoplanet2.appspot.com",
+  messagingSenderId: "579392744204",
+  appId: "1:579392744204:web:e88cd2f10bfedb08ff3729",
+  databaseURL:"https://mundoplanet2-default-rtdb.firebaseio.com/"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -22,4 +23,5 @@ const app = initializeApp(firebaseConfig);
 export const auth = initializeAuth(app, {
   persistence: getReactNativePersistence(ReactNativeAsyncStorage)
 });
+
 export const dbRealTime=getDatabase(app)

@@ -64,8 +64,8 @@ export const RegisterScreen = () => {
                 color: "#8EF39C"
             })
 
-        } catch (e) {
-            console.log(e)
+        } catch (i) {
+            console.log(i)
             setMessageSnackBar({
                 visible: true,
                 message: "No se logró completar el registro, intente más tarde",

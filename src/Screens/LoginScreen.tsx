@@ -22,7 +22,7 @@ export const LoginScreen = () => {
 
     //hoocks
     const navigation = useNavigation()
-    
+
     const [hiddenPassword, setHiddenPassword] = useState(true)
     const [loginForm, setLoginForm] = useState<LoginForm>({
         email: "",
@@ -55,8 +55,8 @@ export const LoginScreen = () => {
                 loginForm.email,
                 loginForm.password
             );
-        } catch (e) {
-            console.log(e);
+        } catch (i) {
+            console.log(i);
             setMessageSnackBar({
                 visible: true,
                 message: "Usuario y/o contraseña incorrecta",
@@ -99,10 +99,10 @@ export const LoginScreen = () => {
                 {messageSnackBar.message}
             </Snackbar>
             <Text
-        onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Registro' }))}
-      >
-        No tienes una cuenta? Regístrate ahora
-      </Text>
+                onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Registro' }))}
+            >
+                No tienes una cuenta? Regístrate ahora
+            </Text>
 
         </View>
     )

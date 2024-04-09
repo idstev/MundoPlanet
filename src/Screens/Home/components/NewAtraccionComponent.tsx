@@ -34,20 +34,18 @@ export const NewAtraccionComponent = ({ visible, setVisible }: Props) => {
         if (!atraccionForm.nombre || !atraccionForm.pais || !atraccionForm.precio || atraccionForm.estadia) {
             return
         }
-        //console.log(letterForm);
         const dbRef = ref(dbRealTime, 'atracciones')
         const saveatraccion = push(dbRef) //ubicacion de almacenamiento
         try {
             await set(saveatraccion, atraccionForm)
-            //Limpiar los valores del formulario
             setAtraccionForm({
                 nombre: '',
                 pais: '',
                 precio: '',
                 estadia: ''
             })
-        } catch (e) {
-            console.log(e);
+        } catch (i) {
+            console.log(i);
         }
         setVisible(false)
 

@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import firebase, { updateProfile } from 'firebase/auth'
-import { auth, dbRealTime } from '../../configs/fiirebaseConfig'
-import { onValue, ref } from 'firebase/database'
 import { FlatList, View } from 'react-native'
-import { styles } from '../../theme/styles'
 import { Avatar, Button, Divider, FAB, IconButton, Modal, Portal, Text, TextInput } from 'react-native-paper'
+import { styles } from '../../theme/styles';
+import { updateProfile } from 'firebase/auth';
+import { auth, dbRealTime } from '../../configs/fiirebaseConfig';
+import firebase from 'firebase/auth'
+import { onValue, ref } from 'firebase/database';
 import { AtraccionComponent } from './components/AtraccionComponent'
 import { NewAtraccionComponent } from './components/NewAtraccionComponent'
 
 interface UserForm {
   name: string
 }
-export interface Atraccion{
+export interface Atraccion {
   id: string,
   nombre: string,
   pais: string,
@@ -27,7 +28,7 @@ export const HomeScreen = () => {
     name: ''
   })
   const [userAuth, setUserAuth] = useState<firebase.User | null>(null)
-  
+
   const [atracciones, setAtracciones] = useState<Atraccion[]>([])
 
   useEffect(() => {
@@ -43,15 +44,15 @@ export const HomeScreen = () => {
   const handlerUpdateUser = async () => {
     try {
       await updateProfile(userAuth!, { displayName: userForm.name })
-    } catch (e) {
-      console.log(e)
+    } catch (i) {
+      console.log(i)
     }
     //console.log(userForm);
     setShowModalProfile(false)
   }
 
   const getAllAtracciones = () => {
-    const dbRef = ref(dbRealTime, 'letters')
+    const dbRef = ref(dbRealTime, 'atracciones')
     onValue(dbRef, (snapshot) => {
       const data = snapshot.val()
       const getKeys = Object.keys(data)

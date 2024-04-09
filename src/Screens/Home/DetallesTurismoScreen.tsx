@@ -8,11 +8,11 @@ import { TextInput, Text, Divider, Button } from 'react-native-paper';
 import { styles } from '../../theme/styles';
 
 export const DetallesTurismoScreen = () => {
-  
+
   const navigation=useNavigation()
   const route = useRoute()
   //@ts-ignore
-  const { Atraccion } = route.params
+  const { atraccion } = route.params
 
 
   const [detallesForm, setDetallesForm] = useState<Atraccion>({
@@ -24,7 +24,7 @@ export const DetallesTurismoScreen = () => {
   })
 
   useEffect(() => {
-    setDetallesForm(Atraccion)
+    setDetallesForm(atraccion)
   }, [])
   const handlerSetDetailForm = (key: string, value: string) => {
     setDetallesForm({ ...detallesForm, [key]: value })
